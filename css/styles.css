@@ -1,0 +1,821 @@
+/* =========================
+   HOPECORE - GLOBAL STYLES
+   Frutiger Aero inspired
+   Blue • Green • White
+   ========================= */
+
+/* ---------- Color Palette ---------- */
+
+:root {
+    --sky-blue: #39bdf8;
+    --deep-blue: #0b79d0;
+    --soft-blue: #dff6ff;
+
+    --fresh-green: #5ee65e;
+    --deep-green: #1ca64c;
+    --soft-green: #e9ffe9;
+
+    --white: #ffffff;
+    --glass-white: rgba(255, 255, 255, 0.72);
+
+    --text-dark: #16304a;
+
+    --blue-glow: rgba(57, 189, 248, 0.65);
+    --green-glow: rgba(94, 230, 94, 0.55);
+    --white-glow: rgba(255, 255, 255, 0.9);
+}
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Page ---------- */
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: var(--text-dark);
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.95),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(94, 230, 94, 0.35),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            160deg,
+            #79d8ff 0%,
+            #b8f3ff 35%,
+            #dffff0 60%,
+            #6ee978 100%
+        );
+
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
+}
+
+/* ---------- Welcome Page ---------- */
+
+.welcome-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+/* ---------- Main Glass Panel ---------- */
+
+.welcome-panel {
+    width: min(700px, 92%);
+    padding: 70px 50px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.88),
+        rgba(224, 250, 255, 0.68),
+        rgba(225, 255, 232, 0.72)
+    );
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 32px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 
+        0 0 25px var(--white-glow),
+        0 0 45px var(--blue-glow),
+        0 0 70px var(--green-glow),
+        inset 0 0 30px rgba(255, 255, 255, 0.75);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---------- Soft Shine Inside Panel ---------- */
+
+.welcome-panel::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: -120px;
+    left: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    filter: blur(35px);
+
+    pointer-events: none;
+}
+
+/* ---------- Green Glow ---------- */
+
+.welcome-panel::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    bottom: -150px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(94, 230, 94, 0.3);
+
+    filter: blur(40px);
+
+    pointer-events: none;
+}
+
+/* ---------- Heading ---------- */
+
+.welcome-panel h1 {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 18px;
+
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+
+    color: var(--white);
+
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 1),
+        0 0 14px rgba(57, 189, 248, 0.95),
+        0 0 28px rgba(57, 189, 248, 0.8),
+        0 0 45px rgba(94, 230, 94, 0.65);
+}
+
+/* ---------- Subtitle ---------- */
+
+.welcome-panel p {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 38px;
+
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+
+    color: #24526b;
+
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 14px rgba(255, 255, 255, 0.65);
+}
+
+/* ---------- Main Button ---------- */
+
+.primary-button {
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+
+    padding: 15px 38px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    color: var(--white);
+
+    background: linear-gradient(
+        135deg,
+        var(--sky-blue),
+        #38d5ca,
+        var(--fresh-green)
+    );
+
+    border: 2px solid rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.95),
+        0 0 22px var(--blue-glow),
+        0 0 35px var(--green-glow);
+
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.7);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+/* ---------- Button Hover ---------- */
+
+.primary-button:hover {
+    transform: translateY(-3px) scale(1.04);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 0 16px rgba(255, 255, 255, 1),
+        0 0 30px rgba(57, 189, 248, 0.9),
+        0 0 48px rgba(94, 230, 94, 0.8);
+}
+
+/* ---------- Button Press ---------- */
+
+.primary-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ---------- JavaScript Button Press Effect ---------- */
+
+.button-active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ---------- Sign-In Button ---------- */
+
+.signin-button {
+    width: 100%;
+    margin-top: 18px;
+
+    padding: 14px 20px;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+}
+
+.signin-button:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.signin-button:active,
+.signin-button.button-active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ---------- Page Load Sunlight Effect ---------- */
+
+body {
+    opacity: 1;
+    filter: brightness(1.8);
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(225, 250, 255, 0.95) 18%,
+            rgba(184, 243, 255, 0.65) 38%,
+            rgba(94, 230, 94, 0.18) 65%,
+            transparent 85%
+        );
+
+    opacity: 1;
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+
+    transform: scale(1.08);
+}
+
+body.page-loaded {
+    filter: brightness(1);
+
+    transition: filter 1.1s ease;
+}
+
+body.page-loaded::before {
+    opacity: 0;
+    transform: scale(1.25);
+}
+
+/* =========================
+   PORTFOLIO PAGE
+   ========================= */
+
+.portfolio-page {
+    width: min(1400px, 94%);
+    margin: 0 auto;
+    padding: 40px 0 80px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+    width: 100%;
+    padding: 20px 3%;
+}
+
+.header-container {
+    width: min(1400px, 94%);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 18px 28px;
+
+    background: var(--glass-white);
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 
+        0 0 18px var(--white-glow),
+        0 0 28px rgba(57, 189, 248, 0.35);
+}
+
+.site-logo {
+    color: var(--deep-blue);
+
+    font-size: 1.5rem;
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+.main-navigation {
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 28px;
+}
+
+.main-navigation a {
+    color:var(--text-dark);
+    
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ---------- Sections ---------- */
+
+.content-section {
+    margin-top: 55px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    margin: 6px 0 10px;
+
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.section-label {
+    color: var(--deep-blue);
+    
+    font-size: 0.9rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.hero-section {
+    position: relative;
+
+    min-height: 360px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px;
+    
+    border-radius: 32px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.82),
+        rgba(223, 246, 255, 0.72),
+        rgba(223, 255, 233, 0.68)
+    );
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow: 
+        0 0 22px rgba(255, 255, 255, 0.8),
+        0 0 38px rgba(57, 189, 248, 0.25),
+        0 0 42px rgba(94, 230, 94, 0.2);
+
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+}
+
+.hero-label {
+    margin-bottom: 10px;
+
+    color: var(--deep-blue);
+
+    font-size: 0.95rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.hero-section h1 {
+    margin-bottom: 18px;
+
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+
+    line-height: 1.05;
+}
+
+.hero-description {
+    max-width: 760px;
+
+    margin-bottom: 28px;
+
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.secondary-button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    border-radius: 999px;
+
+    color: var(--deep-blue);
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 2px solid rgba(255, 255, 255, 0.95);
+
+    text-decoration: none;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    box-shadow: 
+        0 0 16px rgba(255, 255, 255, 0.8),
+        0 0 22px rgba(57, 189, 248, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.secondary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 1),
+        0 0 30px rgba(57, 189, 248, 0.4);
+}
+
+/* ---------- Shared Glass ---------- */
+
+.glass-panel,
+.glass-card {
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.86),
+        rgba(224, 250, 255, 0.72),
+        rgba(233, 255, 233, 0.68)
+    );
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 0 28px rgba(255, 255, 255, 0.8),
+        0 0 30px rgba(57, 189, 248, 0.2),
+        0 0 35px rgba(94, 230, 94, 0.15);
+}
+
+/* ---------- About ---------- */
+
+.about-panel {
+    padding: 36px;
+}
+
+.about-panel p {
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+.about-panel p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- Skills ---------- */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.skill-card {
+    padding: 30px;
+}
+
+.troubleshooting-section .skill-card {
+    padding: 34px;
+    max-width: 100%;
+}
+
+/* ---------- Projects ---------- */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 28px;
+}
+
+.project-card {
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.project-card h3 {
+    margin-bottom: 14px;
+    font-size: 1.7rem;
+}
+
+.project-description {
+    margin-bottom: 22px;
+    line-height: 1.6;
+}
+
+.project-features {
+    margin-bottom: 20px;
+}
+
+.project-features h4 {
+    margin-bottom: 8px;
+}
+
+.project-features ul {
+    padding-left: 20px;
+}
+
+.technology-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 24px;
+}
+
+.technology-tags span {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(57, 189, 248, 0.45);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.project-actions {
+    margin-top: auto;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-section {
+    margin-bottom: 40px;
+}
+
+.contact-section .section-heading {
+    padding: 38px;
+    border-radius: 28px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.84),
+        rgba(224, 250, 255, 0.7),
+        rgba(233, 255, 233, 0.68)
+    );
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow: 
+        0 0 24px rgba(255, 255, 255, 0.8),
+        0 0 30px rgba(57, 189, 248, 0.2);
+}
+
+.contact-section .section-heading p:not(.section-label) {
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+/* =========================
+   README PAGE
+   ========================= */
+
+.readme-page {
+    width: min(1400px, 94%);
+    margin: 0 auto;
+    padding: 40px 0 80px;
+}
+
+.readme-page .hero-section {
+    margin-bottom: 55px;
+}
+
+.readme-page .section-container {
+    width: 100%;
+}
+
+.readme-panel {
+    padding: 36px;
+}
+
+.readme-panel p {
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+.readme-panel p:last-child {
+    margin-bottom: 0;
+}
+
+.readme-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 24px;
+}
+
+.readme-page .project-card {
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.readme-page .project-card p {
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.readme-page .project-card .primary-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+
+    .welcome-panel {
+        padding: 50px 25px;
+
+        border-radius: 24px;
+    }
+
+    .welcome-panel p {
+        font-size: 1rem;
+    }
+
+    .primary-button {
+        padding: 14px 32px;
+    }
+
+    .portfolio-page {
+        width: min(94%, 100%);
+        padding-top: 20px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-navigation {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 14px;
+    }
+
+    .hero-section {
+        min-height: auto;
+        padding: 36px 24px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-panel {
+        padding: 26px;
+    }
+
+    .readme-page {
+        width: min(94%, 100%);
+        padding-top: 20px;
+    }
+
+    .readme-projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .readme-panel {
+        padding: 26px;
+    }
+
+    .contact-section .section-heading {
+        padding: 28px 24px;
+    }
+}
+

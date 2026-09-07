@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Hopecore sign-in page."
+    >
+
+    <title>Hopecore | Sign In</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    
+    <!-- ====================
+          SIGN-IN PAGE
+          ==================== -->
+    
+    <main class="signin-page">
+
+        <section class="signin-panel">
+            
+            <div class="signin-header">
+
+                <h1>Welcome Back</h1>
+
+                <p>
+                    Sign in to continue to Hopecore
+                </p>
+
+            </div>
+
+            <!-- ====================
+                 SIGN-IN FORM
+                 ==================== -->
+
+            <form
+                class="signin-form"
+                id="signin-form"
+            >
+
+                <div class="form-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+                <!-- ====================
+                     FORM OPTIONS
+                     ==================== -->
+
+                <div class="signin-options">
+
+                    <label class="remember-option">
+
+                        <input
+                            type="checkbox"
+                            id="remember-me"
+                            name="remember-me"
+                        >
+
+                        <span>
+                            Remember Me
+                        </span>
+
+                    </label>
+
+                    <a
+                        href="portfolio.html"
+                        class="forgot-password"
+                    >
+                        Portfolio Demo
+                    </a>
+
+                </div>
+
+                <!-- ====================
+                     SIGN-IN BUTTON
+                     ==================== -->
+
+                <button
+                    type="submit"
+                    class="primary-button signin-button"
+                >
+                    Sign In
+                </button>
+            
+            </form>
+
+            <!-- ====================
+                 RETURN LINK
+                 ==================== -->
+
+            <div class="signin-footer">
+
+                <a href="../index.html">
+                    Return to Welcome
+                </a>
+
+            </div>
+                
+        </section>
+
+    </main>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
