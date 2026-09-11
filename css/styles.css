@@ -268,28 +268,6 @@ body {
     transform: translateY(0) scale(0.98);
 }
 
-/* ---------- Sign-In Button ---------- */
-
-.signin-button {
-    width: 100%;
-    margin-top: 18px;
-
-    padding: 14px 20px;
-
-    border-radius: 999px;
-
-    cursor: pointer;
-}
-
-.signin-button:hover {
-    transform: translateY(-3px) scale(1.02);
-}
-
-.signin-button:active,
-.signin-button.button-active {
-    transform: translateY(0) scale(0.98);
-}
-
 /* ---------- Page Load Sunlight Effect ---------- */
 
 body {
